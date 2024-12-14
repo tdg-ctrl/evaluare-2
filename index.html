@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplicație Web</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+
+<body>
+    <header>
+        <h1>Tudor - Gabriel DRAGAN       </h1>
+        <p>   </p>
+        <p>dragan.so.tudor@student.utcluj.ro            </p>
+    </header>
+
+    <section>
+        <h2>Structura retelei si caracteristicile conexiunii</h2>
+            <img src="diagrama.png" alt="diagrama a retelei personale">
+
+            <h2>Caracteristicile conexiunii la retea</h2>
+            <ul>
+                <li>Adresa MAC: 74-54-3C-F9-A3-BE</li>
+                <li>Adresa IP: 192.168.1.149</li>
+                <li>Debit la download: 500MB</li>
+                <li>Debit la upload: 250MB</li>
+            </ul>
+        
+    </section>
+	
+    
+	
+	<section id="monitorizare-resurse">
+        <h2>Monitorizare resurse</h2>
+        <div class="monitorizare-imagini">
+            <img src="cpu.png" alt="CPU Monitorizare">
+            <img src="disk.png" alt="Disk Monitorizare">
+            <img src="gpu.png" alt="GPU Monitorizare">
+            <img src="memorie.png" alt="Memorie Monitorizare">
+			<img src="porturi.png" alt="Porturi">
+			<img src="procese.png" alt="Procese">
+			<img src="servicii.png" alt="Servicii">
+			<img src="ethernet.png" alt="Wi-Fi">
+
+        </div>
+
+        <div class="slider-wrapper">
+            <div class="slider">
+                <img src="cpu.png" alt="CPU Monitorizare">
+                <img src="disk.png" alt="Disk Monitorizare">
+                <img src="gpu.png" alt="GPU Monitorizare">
+                <img src="memorie.png" alt="Memorie Monitorizare">
+				<img src="porturi.png" alt="Porturi">
+				<img src="procese.png" alt="Procese">
+				<img src="servicii.png" alt="Servicii">
+				<img src="ethernet.png" alt="Wi-Fi">
+            </div>
+        </div>
+    </section>
+
+
+         
+        <div class="content-block">
+		
+            <h2>Specificatii tehnice ale statiei principale de lucru</h2>
+		
+            <table>
+                <thead>
+                    <tr>
+                        <th>Denumire componenta</th>
+                        <th>Producator</th>
+                        <th>Parametri</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Procesor</td>
+                        <td>Intel</td>
+                        <td>i5-12400F 2.5GHz</td>
+                    </tr>
+                    <tr>
+                        <td>Memorie RAM</td>
+                        <td>Corsair</td>
+                        <td>32 GB DDR4</td>
+                    </tr>
+                    <tr>
+                        <td>Placa video</td>
+                        <td>NVIDIA</td>
+                        <td>RTX 4060, 8GB</td>
+                    </tr>
+                    <tr>
+                        <td>SSD</td>
+                        <td>Samsung</td>
+                        <td>1TB M.2</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+	 <script>
+        const monitorizareSectiune = document.getElementById("monitorizare-resurse");
+
+        const sliderWrapper = monitorizareSectiune.querySelector(".slider-wrapper");
+         const monitorizareImagini = monitorizareSectiune.querySelector(".monitorizare-imagini");
+
+        monitorizareSectiune.addEventListener("dblclick", function() {
+            monitorizareImagini.style.display = "none";
+            sliderWrapper.style.display = "block";
+            
+            startSlider(); 
+        });
+
+        function startSlider() {
+            const slides = sliderWrapper.querySelectorAll(".slider img");
+            let currentSlide = 0;
+
+          
+            setInterval(function() {
+                slides[currentSlide].style.display = "none";
+                currentSlide = (currentSlide + 1) % slides.length;
+                slides[currentSlide].style.display = "block";
+            }, 3000);  
+        }
+    </script>
+</body>
+</html>
